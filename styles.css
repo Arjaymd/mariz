@@ -1,0 +1,112 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('mariz.png'); /* Background image */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-repeat: no-repeat; /* Prevents repeating */
+    background-attachment: fixed; /* Keeps background static during scroll */
+    background-position: center; /* Centers the background image */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Required for the overlay */
+    overflow: hidden;
+}
+
+/* Dark Overlay */
+/* Dark Overlay */
+body::before {
+    content: ''; /* Creates the overlay */
+    position: fixed; /* Ensures it covers the entire viewport and doesn't scroll */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: -1; /* Places the overlay behind the content */
+}
+
+
+/* Main Container */
+.letter-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    z-index: 1; /* Keeps it above the background and overlay */
+}
+
+/* Header */
+.letter-header {
+    font-size: 2.5em;
+    color: #5fa77e;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Body */
+.letter-body {
+    font-size: 1.2em;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Signature */
+.signature {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #5fa77e;
+    margin-top: 20px;
+}
+
+/* Button Style */
+.read-more-btn {
+    background-color: #5fa77e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #478d61;
+}
+
+/* Animation */
+.letter-container:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .letter-container {
+        padding: 20px;
+    }
+
+    .letter-header {
+        font-size: 2em;
+    }
+
+    .letter-body {
+        font-size: 1em;
+    }
+
+    .read-more-btn {
+        padding: 10px 18px;
+        font-size: 1em;
+    }
+}
